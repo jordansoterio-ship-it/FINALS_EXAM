@@ -13,8 +13,8 @@ exports.getAllUsers = (req, res) => {
 
 //POST
 exports.createUser=(req,res)=>{
-    const {meter,consumer,cubic,amount,status}=req.body;
-    connection.query('INSERT INTO enrollment_bills (student_id,student_name,course_program,units_enrolled,tuition_total,balance) VALUES (?,?,?,?,?)',[student_id,student_name,course_program,units_enrolled,tuition_total,balance],(err,result)=>{
+    const {id,name,course,units,tuition}=req.body;
+    connection.query('INSERT INTO enrollment_bills (student_id,student_name,course_program,units_enrolled,tuition_total,balance) VALUES (?,?,?,?,?)',[id,name,course,units,tuition],(err,result)=>{
         if(err) throw err;
         res.json({message:'User created successfully',id:result.insertId});
     });
