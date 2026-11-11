@@ -21,17 +21,6 @@ exports.createUser=(req,res)=>{
 }
 
 
-//UPDATE
-exports.updateUser=(req,res)=>{
-    const {consumer,cubic,amount,status,meter}=req.body;
-    connection.query('UPDATE student_bills SET student_name=?,cubic_meters_used=?,total_amount=?,status=? WHERE meter_number=? ',[consumer,cubic,amount,status,meter],(err,result)=>{
-        if(err) throw err;
-        if(result.affectedRows>0)
-            res.json({message:'User updated successfully'});
-        else
-            res.status(404).json({message:'User not found'});
-});
-}
 
 //DELETE - Delete a enrollment bill
 exports.deleteEnrollmentBill=(req,res)=>{
