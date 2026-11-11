@@ -5,8 +5,8 @@ const router= express.Router();
 const userController = require('../controllers/userController');
 
 //endpoint to handle employees data retrieval
-router.get('/users', userController.getAllUsers);
-router.post('/water-bills',userController.createUser);
-router.put('/water-bills',userController.updateUser);
+router.get('/enrollment', userController.getAllUsers);
+router.post('/enrollment',userController.createUser);
+router.put('/enrollment',userController.updateUser);
 
 module.exports = router;
